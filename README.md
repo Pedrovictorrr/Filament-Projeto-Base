@@ -75,27 +75,29 @@ Antes de começar, certifique-se de ter os seguintes requisitos instalados em su
 
     O projeto estará disponível em `http://localhost:8000`.
 
+   
 ## Funcionalidades
 
 ### Log de Atividade
 
-O log de atividade registra todas as ações realizadas no sistema, permitindo que os administradores monitorem as atividades dos usuários.
+O log de atividade registra todas as ações realizadas no sistema, permitindo que os administradores monitorem as atividades dos usuários. Isso proporciona uma visão detalhada das interações dos usuários com o sistema, incluindo login, logout, criação, atualização e exclusão de recursos, entre outras ações. Essa funcionalidade é essencial para o monitoramento e auditoria do sistema, ajudando a identificar e investigar atividades suspeitas ou não autorizadas.
 
 ### Log de Exceções
 
-O log de exceções registra todos os erros e exceções que ocorrem no sistema, facilitando a identificação e correção de problemas.
+O log de exceções registra todos os erros e exceções que ocorrem no sistema. Isso é crucial para identificar e corrigir problemas rapidamente, pois fornece informações detalhadas sobre as circunstâncias em que ocorreram as falhas. Com esses registros, os desenvolvedores podem rastrear a origem dos erros, entender melhor os problemas e implementar soluções eficazes. Além disso, o log de exceções ajuda a manter a estabilidade e confiabilidade do sistema, garantindo uma experiência consistente para os usuários.
 
-### Roles e Permissões
+### Funções e Permissões
 
-O sistema inclui um sistema de roles e permissões para controlar o acesso dos usuários a determinadas partes do sistema.
+O sistema inclui um sistema de roles e permissões para controlar o acesso dos usuários a determinadas partes do sistema. Isso permite definir diferentes níveis de acesso com base nas responsabilidades e privilégios de cada usuário. As roles definem conjuntos predefinidos de permissões, enquanto as permissões determinam quais ações específicas um usuário pode realizar em determinados recursos. Com esse sistema, os administradores podem garantir que apenas usuários autorizados tenham acesso a funcionalidades específicas, protegendo assim a integridade e segurança do sistema.
 
 ### CRUD de Usuários
 
-O CRUD de usuários permite a gestão completa dos usuários do sistema, incluindo a criação, leitura, atualização e exclusão de usuários.
+O CRUD de usuários permite a gestão completa dos usuários do sistema, incluindo a criação, leitura, atualização e exclusão de usuários. Isso proporciona aos administradores uma interface intuitiva para gerenciar a base de usuários do sistema, adicionando novos usuários, atualizando suas informações e desativando contas conforme necessário. Além disso, o CRUD de usuários simplifica a administração do sistema, permitindo que os administradores respondam rapidamente a mudanças na equipe e mantenham os perfis de usuário atualizados e precisos.
 
 ### Área para Cadastrar Releases
 
-A área de cadastro de releases permite que os administradores do sistema gerenciem as versões do sistema e registrem as novidades de cada versão.
+A área de cadastro de releases permite que os administradores do sistema gerenciem as versões do sistema e registrem as novidades de cada versão. Isso facilita a comunicação das atualizações e melhorias do sistema para os usuários, mantendo-os informados sobre as últimas mudanças. Os administradores podem registrar detalhes sobre cada release, como notas de lançamento, correções de bugs, melhorias de desempenho e novas funcionalidades, garantindo uma transição suave para os usuários e uma experiência aprimorada com o sistema.
+
 
 ## Contribuição
 
