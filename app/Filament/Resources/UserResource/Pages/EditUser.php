@@ -16,10 +16,7 @@ class EditUser extends EditRecord
 {
     protected static string $resource = UserResource::class;
 
-    public function getFooter(): ?View
-    {
-        return view('filament.pages.footer');
-    }
+
 
     protected function mutateFormDataBeforeFill(array $data): array
     {
@@ -117,15 +114,11 @@ class EditUser extends EditRecord
         return [
             Action::make('save')
                 ->label(__('filament-panels::resources/pages/edit-record.form.actions.save.label'))
-                ->submit('save')
-                ->label('F2 - Salvar')
-                ->keyBindings('f2'),
+                ->submit('save'),
             Action::make('voltar')
                 ->label(__('filament-panels::resources/pages/edit-record.form.actions.cancel.label'))
                 ->url($this->previousUrl ?? static::getResource()::getUrl())
-                ->color('gray')
-                ->label('F10 - Voltar')
-                ->keyBindings('f10'),
+                ->color('gray'),
             DeleteAction::make(),
         ];
     }

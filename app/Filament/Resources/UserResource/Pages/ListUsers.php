@@ -15,13 +15,9 @@ class ListUsers extends ListRecords
     {
         return [
             Actions\CreateAction::make()
-                ->label('F2 - Adicionar')
-                ->keyBindings('f2'),
+
         ];
     }
 
-    public function getFooter(): ?View
-    {
-        return view('filament.pages.footer');
-    }
+
 }

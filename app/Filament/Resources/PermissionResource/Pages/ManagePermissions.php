@@ -18,8 +18,7 @@ class ManagePermissions extends ManageRecords
     {
         return [
             Actions\CreateAction::make()
-                ->label('F2 - Adicionar')
-                ->keyBindings('f2')
+               
                 ->mutateFormDataUsing(function (array $data): array {
 
                     $data['user_id'] = auth()->id();
@@ -38,8 +37,5 @@ class ManagePermissions extends ManageRecords
         ];
     }
 
-    public function getFooter(): ?View
-    {
-        return view('filament.pages.footer');
-    }
+
 }

@@ -14,14 +14,9 @@ class ManageRoles extends ManageRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make()
-                ->label('F2 - Adicionar')
-                ->keyBindings('f2'),
+            Actions\CreateAction::make(),
         ];
     }
 
-    public function getFooter(): ?View
-    {
-        return view('filament.pages.footer');
-    }
+
 }

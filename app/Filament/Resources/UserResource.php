@@ -41,7 +41,6 @@ class UserResource extends Resource
 
     protected static ?string $navigationGroup = 'Usuários';
 
-
     #[Url]
     public bool $isTableReordering = false;
 
@@ -65,20 +64,7 @@ class UserResource extends Resource
 
     public static function form(Form $form): Form
     {
-        function getAvatarInput(): component
-        {
-            return Section::make('Avatar')->schema([
-                FileUpload::make('avatar_url')
-                    ->avatar()
-                    ->image()
-                    ->imageEditor()->label('Foto')
-                    ->disk('local')
-                    ->directory('/public/fotos-perfil')
-                    ->storeFileNamesIn('avatar_url_name')
-                    ->visibility('private')
-                    ->imagePreviewHeight('250'),
-            ]);
-        }
+ 
 
         function getInformacaoPessoal(): component
         {
@@ -91,14 +77,7 @@ class UserResource extends Resource
                 ])
                 ->schema([
                     FileUpload::make('avatar_url')
-                    ->hintIcon(
-                        'heroicon-m-question-mark-circle',
-                        tooltip: function () {
-                            $result = instrucao::where('SKU', '1')
-                                ->first();
-                            return $result ? '(' .  $result->SKU . ') - ' . $result->texto  : '(1) - ';
-                        }
-                    )
+                  
                         ->avatar()
                         ->columnSpan(1)
                         ->image()
@@ -117,39 +96,13 @@ class UserResource extends Resource
                     ])->columns(2)->schema([
                         TextInput::make('name')->label('Nome completo')
                             ->columnSpanFull()
-                            ->hintIcon(
-                                'heroicon-m-question-mark-circle',
-                                tooltip: function () {
-                                    $result = instrucao::where('SKU', '2')
-                                        ->first();
-                                    return $result ? '(' .  $result->SKU . ') - ' . $result->texto  : '(2) - ';
-                                }
-                            )
                             ->required()
                             ->maxLength(255),
                         TextInput::make('email')->label('Email')->unique(ignoreRecord: true)
-
-                            ->hintIcon(
-                                'heroicon-m-question-mark-circle',
-                                tooltip: function () {
-                                    $result = instrucao::where('SKU', '3')
-                                        ->first();
-                                    return $result ? '(' .  $result->SKU . ') - ' . $result->texto  : '(3) - ';
-                                }
-                            )
                             ->email()
                             ->required()
                             ->maxLength(255),
                         TextInput::make('telefone')->unique(ignoreRecord: true)
-
-                            ->hintIcon(
-                                'heroicon-m-question-mark-circle',
-                                tooltip: function () {
-                                    $result = instrucao::where('SKU', '4')
-                                        ->first();
-                                    return $result ? '(' .  $result->SKU . ') - ' . $result->texto  : '(4) - ';
-                                }
-                            )
                             ->label('Telefone')
                             ->tel()
                             ->telRegex('/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\.\/0-9]*$/')
@@ -198,15 +151,7 @@ class UserResource extends Resource
                                     'confirmed', // Campo de confirmação da senha
                                     'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/',
                                 ])
-                                ->autocomplete(false)->disabled(fn (Get $get): bool => !$get('passwordDisable'))
-                                ->hintIcon(
-                                    'heroicon-m-question-mark-circle',
-                                    tooltip: function () {
-                                        $result = instrucao::where('SKU', '5')
-                                            ->first();
-                                        return $result ? '(' .  $result->SKU . ') - ' . $result->texto  : '(5) - ';
-                                    }
-                                ),
+                                ->autocomplete(false)->disabled(fn (Get $get): bool => !$get('passwordDisable')),
                         ]),
                         Group::make([
                             TextInput::make('password_confirmation')
@@ -217,15 +162,7 @@ class UserResource extends Resource
                                 ->rules([
                                     'min:8',
                                 ])
-                                ->autocomplete(false)->disabled(fn (Get $get): bool => !$get('passwordDisable'))
-                                ->hintIcon(
-                                    'heroicon-m-question-mark-circle',
-                                    tooltip: function () {
-                                        $result = instrucao::where('SKU', '6')
-                                            ->first();
-                                        return $result ? '(' .  $result->SKU . ') - ' . $result->texto  : '(6) - ';
-                                    }
-                                ),
+                                ->autocomplete(false)->disabled(fn (Get $get): bool => !$get('passwordDisable')),
                         ]),
                     ]),
                 ]);
@@ -236,14 +173,7 @@ class UserResource extends Resource
                 ->schema([
                     Select::make('Permissão')
                         ->label('Função')
-                        ->hintIcon(
-                            'heroicon-m-question-mark-circle',
-                            tooltip: function () {
-                                $result = instrucao::where('SKU', '7')
-                                    ->first();
-                                return $result ? '(' .  $result->SKU . ') - ' . $result->texto  : '(7) - ';
-                            }
-                        )
+                       
                         ->native(false)
                         ->relationship(
                             name: 'roles',
@@ -251,14 +181,7 @@ class UserResource extends Resource
                             modifyQueryUsing: fn (Builder $query) => Auth()->user()->hasRole('Super') ? null : $query->where('title', '!=', 'Inativo')->where('title', '!=', 'Super'),
                         ),
                     Select::make('status')
-                        ->hintIcon(
-                            'heroicon-m-question-mark-circle',
-                            tooltip: function () {
-                                $result = instrucao::where('SKU', '8')
-                                    ->first();
-                                return $result ? '(' .  $result->SKU . ') - ' . $result->texto  : '(8) - ';
-                            }
-                        )
+                        
                         ->native(false)
                         ->default('Ativo')
                         ->options([

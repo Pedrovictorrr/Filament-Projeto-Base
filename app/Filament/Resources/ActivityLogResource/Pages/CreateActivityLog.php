@@ -10,8 +10,5 @@ class CreateActivityLog extends CreateRecord
 {
     protected static string $resource = ActivityLogResource::class;
 
-    public function getFooter(): ?View
-    {
-        return view('filament.pages.footer');
-    }
+
 }

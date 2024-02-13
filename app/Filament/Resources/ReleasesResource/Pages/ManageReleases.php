@@ -17,8 +17,7 @@ class ManageReleases extends ManageRecords
     {
         return [
             Actions\CreateAction::make()
-                ->label('F2 - Adicionar')
-                ->keyBindings('f2')->mutateFormDataUsing(function (array $data): array {
+           ->mutateFormDataUsing(function (array $data): array {
 
                     $recipient = User::all();
 
@@ -34,10 +33,7 @@ class ManageReleases extends ManageRecords
         ];
     }
 
-    public function getFooter(): ?View
-    {
-        return view('filament.pages.footer');
-    }
+
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {

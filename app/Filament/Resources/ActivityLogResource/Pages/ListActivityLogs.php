@@ -10,8 +10,5 @@ class ListActivityLogs extends ListRecords
 {
     protected static string $resource = ActivityLogResource::class;
 
-    public function getFooter(): ?View
-    {
-        return view('filament.pages.footer');
-    }
+ 
 }

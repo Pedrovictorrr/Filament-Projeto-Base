@@ -23,8 +23,5 @@ class ReleasePublic extends Page
         $this->model = Releases::get();
     }
 
-    public function getFooter(): ?View
-    {
-        return view('filament.pages.footer');
-    }
+
 }

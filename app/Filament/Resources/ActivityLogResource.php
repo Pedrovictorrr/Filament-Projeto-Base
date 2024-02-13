@@ -319,8 +319,5 @@ class ActivityLogResource extends Resource
         ];
     }
 
-    public function getFooter(): ?View
-    {
-        return view('filament.pages.footer');
-    }
+
 }
