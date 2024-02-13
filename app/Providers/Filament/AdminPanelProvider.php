@@ -31,10 +31,14 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
+            // Brand logo e favIcon 
+            // ->brandLogo(asset('images/logos/logo-preto.png'))
+            // ->darkModeBrandLogo(asset('images/logos/logo-branco.png'))
+            // ->favicon(asset('images/favicon.png'))
+            //  -------------
             ->default()
             ->globalSearch(true)
             ->id('admin')
-            ->favicon(asset('images/favicon.png'))
             ->path('')
             ->databaseNotifications()
             ->login(Login::class)
