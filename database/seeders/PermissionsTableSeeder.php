@@ -106,28 +106,6 @@ class PermissionsTableSeeder extends Seeder
                 'title' => 'user_status_edit',
                 'description' => 'Usuários - Editar status.',
             ],
-
-            // Helpers policies
-            [
-                'title' => 'instrucao_create',
-                'description' => 'Instruções - Criar.',
-            ],
-            [
-                'title' => 'instrucao_edit',
-                'description' => 'Instruções - Editar.',
-            ],
-            [
-                'title' => 'instrucao_show',
-                'description' => 'Instruções - Visualizar.',
-            ],
-            [
-                'title' => 'instrucao_delete',
-                'description' => 'Instruções - Excluir.',
-            ],
-            [
-                'title' => 'instrucao_access',
-                'description' => 'Instruções - Gerenciar.',
-            ],
             // Release
             [
                 'title' => 'release_create',

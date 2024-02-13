@@ -3,7 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\UserResource\Pages;
-use App\Models\instrucao;
+
 use App\Models\User;
 use Filament\Forms\Components\Component;
 use Filament\Forms\Components\Fieldset;

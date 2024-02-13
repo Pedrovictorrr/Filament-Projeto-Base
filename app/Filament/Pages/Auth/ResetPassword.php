@@ -95,7 +95,7 @@ class ResetPassword extends RequestPasswordReset
         $status = Password::broker(Filament::getAuthPasswordBroker())->sendResetLink(
             $data,
             function (CanResetPassword $user, string $token) use ($data) { // Usa os dados na função anônima
-                if (! method_exists($user, 'notify')) {
+                if (!method_exists($user, 'notify')) {
                     $userClass = $user::class;
 
                     throw new Exception("Model [{$userClass}] does not have a [notify()] method.");
@@ -106,7 +106,6 @@ class ResetPassword extends RequestPasswordReset
 
                 if (isset($data['email'])) {
                     $user->sendPasswordResetNotification($notification);
-                
                 }
             },
         );
@@ -131,7 +130,7 @@ class ResetPassword extends RequestPasswordReset
         $this->form->fill();
     }
 
-  
+
 
     public function form(Form $form): Form
     {
@@ -144,20 +143,7 @@ class ResetPassword extends RequestPasswordReset
 
     protected function getTabsFormComponent(): Component
     {
-        return Tabs::make('Resetar Senha')
-            ->tabs([
-                Tab::make('Whatsapp')
-                    ->id('whatsapp')
-                    ->icon('heroicon-m-device-phone-mobile')
-                    ->schema([
-                        $this->getWhatsappFormComponent(),
-                    ]),
-                Tab::make('Email')->icon('heroicon-m-envelope')
-                    ->schema([
-                        $this->getEmailFormComponent(),
-                    ]),
-
-            ])->persistTabInQueryString();
+        return $this->getEmailFormComponent();
     }
 
     protected function getWhatsappFormComponent(): Component
@@ -239,14 +225,14 @@ class ResetPassword extends RequestPasswordReset
         if (strpos($data['login'], '@') === false) {
             $data['login'] = preg_replace('/[^0-9]/', '', $data['login']);
             $user = User::where('telefone', $data['login'])->where('status', 'Ativo')->first();
-            if (! $user) {
+            if (!$user) {
                 return [
                     $login_type => 'erro',
                 ]; // Usuário não encontrado ou não está ativo
             }
         } else {
             $user = User::where('email', $data['login'])->where('status', 'Ativo')->first();
-            if (! $user) {
+            if (!$user) {
                 return [
                     $login_type => 'erro',
 
