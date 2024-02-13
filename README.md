@@ -117,7 +117,6 @@ Se tiver alguma dúvida ou sugestão, entre em contato através do email: pedro.
 
 ---
 
-Este README fornece uma visão geral detalhada do projeto base em Laravel com Filament, incluindo instruções de instalação, funcionalidades, contribuição, licença e contato. Sinta-se à vontade para expandi-lo conforme necessário para atender às necessidades específicas do seu projeto.
 
 
 | ![image](https://github.com/Pedrovictorrr/Filament-Projeto-Base/assets/82172897/a0db7e15-00e1-40f3-8a22-e0542e48a96d) | ![image](https://github.com/Pedrovictorrr/Filament-Projeto-Base/assets/82172897/f652ed2c-a9cc-477a-ad79-76ba7816c377) | ![image](https://github.com/Pedrovictorrr/Filament-Projeto-Base/assets/82172897/3510557e-404c-4d65-84f8-0ecea1e50497) |
