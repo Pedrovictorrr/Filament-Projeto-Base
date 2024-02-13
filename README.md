@@ -23,13 +23,13 @@ Antes de começar, certifique-se de ter os seguintes requisitos instalados em su
 1. Clone este repositório para o seu ambiente de desenvolvimento:
 
    ```bash
-   git clone https://github.com/seu-usuario/seu-projeto.git
+   git clone https://github.com/Pedrovictorrr/Filament-Projeto-Base.git
    ```
 
 2. Navegue até o diretório do projeto:
 
    ```bash
-   cd seu-projeto
+   cd Filament-Projeto-Base
    ```
 
 3. Instale as dependências do PHP com o Composer:
