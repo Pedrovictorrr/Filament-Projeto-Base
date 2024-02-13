@@ -3,9 +3,9 @@
 Este é um projeto base em Laravel integrado com Filament, uma biblioteca para administração de painéis de controle elegantes e personalizáveis. Este projeto foi desenvolvido para facilitar o início de novos sistemas em Laravel, fornecendo uma estrutura sólida e recursos essenciais, incluindo:
 
 - Log de Atividade
-- Log de Exceções
-- Roles e Permissões
-- CRUD de Usuários
+- Log de Exceções ( [Laravel Exception](https://spatie.be/docs/laravel-permission/v6/advanced-usage/exceptions) )
+- Funções e Permissões ( [Laravel Permission](https://spatie.be/index.php/docs/laravel-permission/v6/introduction) )
+- CRUD de Usuários 
 - Área para Cadastrar Releases
 
 ## Configuração
