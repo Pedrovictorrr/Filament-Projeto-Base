@@ -31,7 +31,7 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-            // Brand logo e favIcon 
+            // Brand logo e favIcon
             // ->brandLogo(asset('images/logos/logo-preto.png'))
             // ->darkModeBrandLogo(asset('images/logos/logo-branco.png'))
             // ->favicon(asset('images/favicon.png'))
@@ -106,13 +106,7 @@ class AdminPanelProvider extends PanelProvider
                 'Usuários',
                 'Admin',
             ])
-            ->userMenuItems([
-                MenuItem::make()
-                    ->label('Release')
-                    ->url('/release-public')
-                    ->icon('heroicon-o-rocket-launch'),
-                // ...
-            ]);
+           ;
     }
 
 
